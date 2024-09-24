@@ -30,4 +30,5 @@ Python 3.9
     cd dpaks
     pip install -v -e .
 # 3 Train
-    python train.py config/dpaks/dpaks-4scale_r50_channelmap-retinanet_5scale_r50_fpn-60e_visdrone.py
+    python tools/train.py config/dpaks/dpaks-4scale_r50_channelmap-retinanet_5scale_r50_fpn-12e_visdrone.py \
+	--work-dir results/dpaks/
