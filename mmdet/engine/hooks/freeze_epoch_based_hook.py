@@ -44,7 +44,7 @@ class FreezeAuxiliaryBranchEpochBasedHook(Hook):
             model = runner.model
             if is_model_wrapper(model):
                 model = model.module
-
+            
             # Backbone
             backbone = model.aux_backbone
             backbone.eval()
@@ -65,6 +65,7 @@ class FreezeAuxiliaryBranchEpochBasedHook(Hook):
             for _, param in bbox_head.named_parameters():
                 if param.requires_grad is True:
                     param.requires_grad = False
+
 
 @HOOKS.register_module()
 class FreezeModelEpochBasedHook(Hook):

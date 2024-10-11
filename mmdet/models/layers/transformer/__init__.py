@@ -40,6 +40,6 @@ __all__ = [
     'Mask2FormerTransformerDecoderLayer', 'Mask2FormerTransformerDecoder',
     'GroundingDinoTransformerDecoderLayer', 'GroundingDinoTransformerEncoder',
     'GroundingDinoTransformerDecoder',
-
+    
     'CdnSmallQueryGenerator'
 ]

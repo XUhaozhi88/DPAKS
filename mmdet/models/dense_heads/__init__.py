@@ -53,13 +53,9 @@ from .yolo_head import YOLOV3Head
 from .yolof_head import YOLOFHead
 from .yolox_head import YOLOXHead
 
-from .dino_small_head import DINOSmallHead
-from .dino_noise_head import DINONoiseHead
-# from .dino_size_head import DINOSizeHead
-# from .dino_size_head1 import DINOSizeHead
-# from .dino_size_head2 import DINOSizeHead
-from .dino_size_head3 import DINOSizeHead
+from .retina_size_head import RetinaSizeHead
 
+from .dpaks_head import DPAKSHead
 
 __all__ = [
     'AnchorFreeHead', 'AnchorHead', 'GuidedAnchorHead', 'FeatureAdaption',
@@ -78,5 +74,5 @@ __all__ = [
     'BoxInstBboxHead', 'BoxInstMaskHead', 'ConditionalDETRHead', 'DINOHead',
     'ATSSVLFusionHead', 'DABDETRHead', 'DDQDETRHead', 'GroundingDINOHead',
 
-    'DINOSmallHead', 'DINOSizeHead', 'DINONoiseHead'
+    'DPAKSHead', 'RetinaSizeHead'
 ]

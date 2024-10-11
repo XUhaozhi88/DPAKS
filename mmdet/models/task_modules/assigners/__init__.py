@@ -28,5 +28,5 @@ __all__ = [
     'TaskAlignedAssigner', 'TopkHungarianAssigner', 'BBoxL1Cost',
     'ClassificationCost', 'CrossEntropyLossCost', 'DiceCost', 'FocalLossCost',
     'IoUCost', 'BboxOverlaps2D', 'DynamicSoftLabelAssigner',
-    'MultiInstanceAssigner', 'BboxOverlaps2D_GLIP'
+    'MultiInstanceAssigner', 'BboxOverlaps2D_GLIP',
 ]

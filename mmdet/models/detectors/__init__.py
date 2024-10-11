@@ -60,8 +60,11 @@ from .yolof import YOLOF
 from .yolox import YOLOX
 
 from .dino_small import DINOSmall
-from .dino_aux import DINOAUX
 from .dino_noise import DINONoise
+from .dino_aux import DINOAUX
+from .dino_aux_amp import DINOAUXAMP
+
+from .dpaks import DPAKS
 
 __all__ = [
     'ATSS', 'BaseDetector', 'SingleStageDetector', 'TwoStageDetector', 'RPN',
@@ -75,7 +78,7 @@ __all__ = [
     'MaskFormer', 'DDOD', 'Mask2Former', 'SemiBaseDetector', 'SoftTeacher',
     'RTMDet', 'Detectron2Wrapper', 'CrowdDet', 'CondInst', 'BoxInst',
     'DetectionTransformer', 'ConditionalDETR', 'DINO', 'DABDETR', 'GLIP',
-    'DDQDETR', 'GroundingDINO',
+    'DDQDETR', 'GroundingDINO', 
 
-    'DINOSmall', 'DINOAUX', 'DINONoise'
+    'DINOSmall', 'DINONoise', 'DINOAUX', 'DINOAUXAMP', 'DPAKS'
 ]

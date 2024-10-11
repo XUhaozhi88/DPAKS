@@ -390,11 +390,13 @@ class DINOHead(DeformableDETRHead):
                 gt_bboxes.new_tensor([], dtype=torch.long)
 
         neg_inds = pos_inds + num_queries_each_group // 2
-
+        
         # label targets
         labels = gt_bboxes.new_full((num_denoising_queries, ),
                                     self.num_classes,
                                     dtype=torch.long)
+        if pos_inds.shape[0] > labels.shape[0]:
+            raise AssertionError
         labels[pos_inds] = gt_labels[pos_assigned_gt_inds]
         label_weights = gt_bboxes.new_ones(num_denoising_queries)
 

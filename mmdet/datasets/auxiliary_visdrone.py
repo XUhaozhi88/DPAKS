@@ -56,12 +56,14 @@ class AUXVisDroneDataset(VisDroneDataset):
                 continue
             bbox = [x1, y1, x1 + w, y1 + h]
 
+            # ---------------------------------------------
             if ann['area'] < 32 ** 2:
                 instance['size_label'] = 0
             elif ann['area'] < 96 ** 2:
                 instance['size_label'] = 1
             else:
                 instance['size_label'] = 2
+            # ---------------------------------------------
 
             if ann.get('iscrowd', False):
                 instance['ignore_flag'] = 1

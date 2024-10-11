@@ -19,7 +19,6 @@ from .swin import SwinTransformer
 from .trident_resnet import TridentResNet
 
 from .aux_resnet import AUXResNet
-from .resnet_freeze import ResNetFreeze
 from .aux_swin import AUXSwinTransformer
 
 __all__ = [
@@ -29,5 +28,5 @@ __all__ = [
     'SwinTransformer', 'PyramidVisionTransformer',
     'PyramidVisionTransformerV2', 'EfficientNet', 'CSPNeXt',
 
-    'AUXResNet', 'ResNetFreeze', 'AUXSwinTransformer'
+    'AUXResNet', 'AUXSwinTransformer'
 ]

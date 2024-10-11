@@ -23,8 +23,8 @@ from .transforms import (Albu, CachedMixUp, CachedMosaic, CopyPaste, CutOut,
                          SegRescale, YOLOXHSVRandomAug)
 from .wrappers import MultiBranch, ProposalBroadcaster, RandomOrder
 
-from .auxiliary_loading import AUXLoadAnnotations
 from .auxiliary_formatting import AUXPackDetInputs
+from .auxiliary_loading import AUXLoadAnnotations
 
 __all__ = [
     'PackDetInputs', 'ToTensor', 'ImageToTensor', 'Transpose',
@@ -44,5 +44,5 @@ __all__ = [
     'PackTrackInputs', 'PackReIDInputs', 'FixScaleResize',
     'ResizeShortestEdge', 'GTBoxSubOne_GLIP', 'RandomFlip_GLIP',
 
-    'AUXLoadAnnotations', 'AUXPackDetInputs'
+    'AUXPackDetInputs', 'AUXLoadAnnotations'
 ]

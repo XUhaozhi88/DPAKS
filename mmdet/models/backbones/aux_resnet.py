@@ -6,7 +6,6 @@ from mmdet.registry import MODELS
 
 from .resnet import ResNet
 
-
 def autopad(k, p=None, d=1):  # kernel, padding, dilation
     # Pad to 'same' shape outputs
     if d > 1:
@@ -14,7 +13,6 @@ def autopad(k, p=None, d=1):  # kernel, padding, dilation
     if p is None:
         p = k // 2 if isinstance(k, int) else [x // 2 for x in k]  # auto-pad
     return p
-
 
 class CBLinear(nn.Module):
     def __init__(self, c1, c2, k=1, s=1, p=None, g=1):  # ch_in, ch_outs, kernel, stride, padding, groups
@@ -28,7 +26,6 @@ class CBLinear(nn.Module):
         out = self.conv(x)
         return out
 
-
 class CBFuse(nn.Module):
     def __init__(self):
         super(CBFuse, self).__init__()
@@ -39,18 +36,17 @@ class CBFuse(nn.Module):
         out = torch.sum(torch.stack(res + xs[-1:]), dim=0)
         return out
 
-
 @MODELS.register_module()
 class AUXResNet(ResNet):
     """Auxiliary ResNet backbone.
     在这里我们没有使用和yolov9一样的多层级融合,仅是单层融合
-
+    
     """
 
     def __init__(self, cbl_arch_settings=([512, 256], [1024, 512], [2048, 1024]),
                  *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
+        super().__init__(*args, **kwargs)        
+        
         self.cbl_layers = []
         self.cbfuse_layers = []
         for i, cbl_arch in enumerate(cbl_arch_settings):
@@ -66,7 +62,7 @@ class AUXResNet(ResNet):
     def make_CBLinear(self, **kwargs):
         """Pack all blocks in a stage into a ``ResLayer``."""
         return CBLinear(**kwargs)
-
+    
     def make_CBFuse(self, **kwargs):
         """Pack all blocks in a stage into a ``ResLayer``."""
         return CBFuse(**kwargs)
@@ -75,7 +71,7 @@ class AUXResNet(ResNet):
         """Forward function."""
 
         if len(resnet_xs) == 4: resnet_xs = resnet_xs[1:]
-
+        
         if self.deep_stem:
             x = self.stem(x)
         else:
@@ -89,9 +85,9 @@ class AUXResNet(ResNet):
         for i, layer_name in enumerate(self.cbl_layers):
             cbl_layer = getattr(self, layer_name)
             resnet_x = cbl_layer(resnet_xs[i])
-            resnet_outs.append(resnet_x)
+            resnet_outs.append(resnet_x)    
 
-            # auxiliary resent output
+        # auxiliary resent output
         outs = []
         for i, layer_name in enumerate(self.res_layers):
             res_layer = getattr(self, layer_name)

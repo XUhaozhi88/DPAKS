@@ -10,8 +10,8 @@ from .utils import trigger_visualization_hook
 from .visualization_hook import DetVisualizationHook, TrackVisualizationHook
 from .yolox_mode_switch_hook import YOLOXModeSwitchHook
 
-from .freeze_epoch_based_hook import FreezeBackboneEpochBasedHook, FreezeModelEpochBasedHook, FreezeAuxiliaryBranchEpochBasedHook
-from .unfreeze_epoch_based_hook import UnfreezeBackboneEpochBasedHook, UnfreezeModelEpochBasedHook, UnfreezeAuxiliaryBranchBasedHook
+from .freeze_epoch_based_hook import FreezeAuxiliaryBranchEpochBasedHook
+from .unfreeze_epoch_based_hook import UnfreezeAuxiliaryBranchBasedHook
 
 __all__ = [
     'YOLOXModeSwitchHook', 'SyncNormHook', 'CheckInvalidLossHook',
@@ -19,6 +19,7 @@ __all__ = [
     'NumClassCheckHook', 'MeanTeacherHook', 'trigger_visualization_hook',
     'PipelineSwitchHook', 'TrackVisualizationHook',
 
-    'FreezeBackboneEpochBasedHook', 'FreezeModelEpochBasedHook', 'FreezeAuxiliaryBranchEpochBasedHook',
-    'UnfreezeBackboneEpochBasedHook', 'UnfreezeModelEpochBasedHook', 'UnfreezeAuxiliaryBranchBasedHook'
+
+    'FreezeAuxiliaryBranchEpochBasedHook', 
+    'UnfreezeAuxiliaryBranchBasedHook',
 ]

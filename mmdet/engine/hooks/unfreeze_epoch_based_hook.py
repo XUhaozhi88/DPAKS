@@ -108,7 +108,6 @@ class UnfreezeAuxiliaryBranchBasedHook(Hook):
                 param.requires_grad = False
 
 
-
 @HOOKS.register_module()
 class UnfreezeModelEpochBasedHook(Hook):
     """Unfreeze backbone network Hook.

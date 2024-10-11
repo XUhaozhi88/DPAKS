@@ -18,5 +18,5 @@ __all__ = [
     'InstanceBalancedPosSampler', 'IoUBalancedNegSampler', 'CombinedSampler',
     'OHEMSampler', 'SamplingResult', 'ScoreHLRSampler', 'MaskPseudoSampler',
     'MaskSamplingResult', 'MultiInstanceSamplingResult',
-    'MultiInsRandomSampler'
+    'MultiInsRandomSampler',
 ]
